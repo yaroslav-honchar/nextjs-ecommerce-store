@@ -3,7 +3,7 @@ import { FeaturedProducts } from "@/components/featured-products/featured-produc
 import { getBillboard } from "@/services/billboards.service"
 import { getProducts } from "@/services/products.service"
 
-export default async function Home() {
+const Home = async () => {
   const [billboard, products] = await Promise.all([
     getBillboard("66d5d8e755ccb2f2eef37bec"),
     getProducts({
@@ -20,3 +20,4 @@ export default async function Home() {
     </>
   )
 }
+export default Home
