@@ -1,5 +1,4 @@
 export const ClientRoutes = {
   home: "/",
-  about: "/about",
-  products: "/products",
+  catalog: (slug: string) => `/catalog/${slug}`,
 }

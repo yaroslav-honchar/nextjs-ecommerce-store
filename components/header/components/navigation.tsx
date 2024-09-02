@@ -2,12 +2,13 @@
 
 import cn from "classnames"
 import React, { useState } from "react"
+import type { ICategory } from "@/types/category"
+import { ClientRoutes } from "@/routes/client.routes"
 import { Scrollbar } from "@/utils/scrollbar"
 import Link from "next/link"
 import type { INavigationProps } from "./navigation.props"
-import { navigationRoutes } from "./navigation.routes"
 
-export const Navigation: React.FC<INavigationProps> = ({ className }) => {
+export const Navigation: React.FC<INavigationProps> = ({ className, categories }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const onToggleNav = (value?: boolean) => {
@@ -46,15 +47,15 @@ export const Navigation: React.FC<INavigationProps> = ({ className }) => {
         )}
       >
         <ul className={"flex lg:items-center max-lg:flex-col max-lg:gap-6 lg:gap-4"}>
-          {navigationRoutes.map(({ href, label }) => (
-            <li key={href}>
+          {categories.map(({ name }: ICategory) => (
+            <li key={ClientRoutes.catalog("")}>
               <Link
                 className={
                   "font-medium max-lg:text-2xl lg:text-sm text-black hover:text-cyan-600 transition-colors duration-300"
                 }
-                href={href}
+                href={ClientRoutes.catalog("")}
               >
-                {label}
+                {name}
               </Link>
             </li>
           ))}
