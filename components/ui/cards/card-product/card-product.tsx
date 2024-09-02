@@ -4,13 +4,16 @@ import cn from "classnames"
 import { ExpandIcon, HeartIcon, ShoppingCartIcon } from "lucide-react"
 import React from "react"
 import { Button } from "@/components/ui/buttons/button/button"
+import { LinkRoot } from "@/components/ui/links/link-root/link-root"
 import { Title } from "@/components/ui/topography/title/title"
+import { ClientRoutes } from "@/routes/client.routes"
 import { priceFormatter } from "@/lib/price-formatter"
 import Image from "next/image"
 import type { ICardProductProps } from "./card-product.props"
 
 export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
   const { name, price, images, category } = product
+
   return (
     <div className={"group flex flex-col gap-6 bg-white cursor-pointer"}>
       <div className={"aspect-square relative overflow-hidden"}>
@@ -46,13 +49,16 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
         )}
       </div>
       <div className={"flex flex-col gap-2"}>
-        <Title
-          tag={"h3"}
-          size={"sm"}
-          className={"hover:text-cyan-600 transition-colors duration-300"}
-        >
-          {name}
-        </Title>
+        <LinkRoot href={ClientRoutes.product(product.id)}>
+          <Title
+            tag={"span"}
+            size={"sm"}
+            className={"hover:text-cyan-600 transition-colors duration-300"}
+          >
+            {name}
+          </Title>
+        </LinkRoot>
+
         <p className={"text-gray-500"}>{category.name}</p>
         <p className={"text-md text-black font-medium"}>{priceFormatter(price)}</p>
       </div>

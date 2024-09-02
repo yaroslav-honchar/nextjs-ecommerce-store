@@ -39,13 +39,13 @@ export const Navigation: React.FC<INavigationProps> = ({ className, categories }
         )}
       >
         <ul className={"flex lg:items-center max-lg:flex-col max-lg:gap-6 lg:gap-4"}>
-          {categories.map(({ name }: ICategory) => (
-            <li key={ClientRoutes.catalog("")}>
+          {categories.map(({ name, id }: ICategory) => (
+            <li key={ClientRoutes.catalog(id)}>
               <Link
                 className={
                   "font-medium max-lg:text-2xl lg:text-sm text-black hover:text-cyan-600 transition-colors duration-300"
                 }
-                href={ClientRoutes.catalog("")}
+                href={ClientRoutes.catalog(id)}
               >
                 {name}
               </Link>
