@@ -7,3 +7,8 @@ body,
 :root {
   height: 100%;
 }
+
+:root {
+  --header-height: 0px;
+  --scrollbar-offset: 0px;
+}
