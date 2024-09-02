@@ -3,7 +3,7 @@
 import cn from "classnames"
 import type { PropsWithChildren } from "react"
 import React, { useEffect, useRef, useState } from "react"
-import { Container } from "@/components/ui/container/container"
+import { Container } from "@/components/ui/wrappers/container/container"
 import { throttle } from "@/lib/throttle"
 import { DocumentWorker } from "@/utils/document-worker"
 
@@ -64,8 +64,8 @@ export const HeaderClient: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <header
       ref={headerRef}
-      className={cn("border-b w-full py-5", {
-        "translate-[-100%]": !isHeaderVisible,
+      className={cn("border-b w-full py-5 fixed top-0 left-0 z-50 bg-white transition-all duration-500", {
+        "translate-y-[-100%] opacity-0": !isHeaderVisible,
       })}
     >
       <Container>

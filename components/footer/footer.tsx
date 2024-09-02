@@ -1,6 +1,6 @@
 import React from "react"
-import { Container } from "@/components/ui/container/container"
 import { LinkLogo } from "@/components/ui/links/link-logo/link-logo"
+import { Container } from "@/components/ui/wrappers/container/container"
 
 export const Footer: React.FC = () => {
   const year = new Date().getFullYear()

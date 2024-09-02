@@ -1,5 +1,5 @@
 export interface IBillboard {
   id: string
-  name: string
+  label: string
   imageUrl: string
 }

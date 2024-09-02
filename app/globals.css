@@ -9,6 +9,6 @@ body,
 }
 
 :root {
-  --header-height: 0px;
+  --header-height: 77px;
   --scrollbar-offset: 0px;
 }

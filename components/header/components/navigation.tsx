@@ -1,8 +1,10 @@
 "use client"
 
 import cn from "classnames"
+import { Menu, ShoppingBasket } from "lucide-react"
 import React, { useState } from "react"
-import type { ICategory } from "@/types/category"
+import type { ICategory } from "@/types/category.interface"
+import { Button } from "@/components/ui/buttons/button/button"
 import { ClientRoutes } from "@/routes/client.routes"
 import { Scrollbar } from "@/utils/scrollbar"
 import Link from "next/link"
@@ -26,17 +28,7 @@ export const Navigation: React.FC<INavigationProps> = ({ className, categories }
   }
 
   return (
-    <nav
-      className={cn("max-lg:w-full", className, {
-        open: isOpen,
-      })}
-    >
-      <button
-        className="block lg:hidden relative z-20 py-1 px-3 border-2 rounded-md text-sm text-black ms-auto"
-        onClick={() => onToggleNav()}
-      >
-        {!isOpen ? "Menu" : "Close"}
-      </button>
+    <nav className={cn("w-full flex items-center gap-3 xl:gap-6", className)}>
       <div
         className={cn(
           "max-lg:fixed max-lg:right-0 max-lg:top-0 max-lg:bg-white max-lg:size-full max-lg:z-10 max-lg:pt-[calc(var(--header-height)+2rem)] max-lg:pb-8 max-lg:px-5",
@@ -61,6 +53,29 @@ export const Navigation: React.FC<INavigationProps> = ({ className, categories }
           ))}
         </ul>
       </div>
+      <Button
+        size={"icon"}
+        variant={"ghost"}
+        className={"ms-auto font-bold gap-1 relative"}
+      >
+        <ShoppingBasket size={24} />
+        <span
+          className={
+            "flex items-center justify-center absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 bg-black rounded-full size-5 text-xs text-white"
+          }
+        >
+          0
+        </span>
+      </Button>
+      <Button
+        size={"icon"}
+        className={cn("lg:hidden relative z-20", {
+          "bg-cyan-600": isOpen,
+        })}
+        onClick={() => onToggleNav()}
+      >
+        <Menu size={20} />
+      </Button>
     </nav>
   )
 }

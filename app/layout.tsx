@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
       <body className={font.className}>
         <div className={"flex flex-col size-full"}>
           <Header />
-          <main className={"flex-grow"}>{children}</main>
+          <main className={"flex-grow pt-[var(--header-height)]"}>{children}</main>
           <Footer />
         </div>
       </body>

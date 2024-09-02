@@ -1,5 +1,5 @@
 import type { AxiosRequestConfig } from "axios"
-import type { ICategory } from "@/types/category"
+import type { ICategory } from "@/types/category.interface"
 import { coreService } from "@/services/core.service"
 
 const ENDPOINT = "/categories"

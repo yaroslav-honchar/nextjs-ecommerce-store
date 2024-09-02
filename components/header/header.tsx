@@ -4,8 +4,6 @@ import { LinkLogo } from "@/components/ui/links/link-logo/link-logo"
 import { getCategories } from "@/services/categories.service"
 import { Navigation } from "./components/navigation"
 
-export const revalidate = 0
-
 export const Header: React.FC = async () => {
   const categories = await getCategories()
 
