@@ -5,13 +5,16 @@ import { Menu, ShoppingBasket } from "lucide-react"
 import React, { useState } from "react"
 import type { ICategory } from "@/types/category.interface"
 import { Button } from "@/components/ui/buttons/button/button"
+import { LinkButton } from "@/components/ui/links/link-button/link-button"
 import { ClientRoutes } from "@/routes/client.routes"
+import { useCart } from "@/hooks/use-cart.hook"
 import { Scrollbar } from "@/utils/scrollbar"
 import Link from "next/link"
 import type { INavigationProps } from "./navigation.props"
 
 export const Navigation: React.FC<INavigationProps> = ({ className, categories }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const cart = useCart()
 
   const onToggleNav = (value?: boolean) => {
     setIsOpen((prev: boolean): boolean => {
@@ -53,7 +56,8 @@ export const Navigation: React.FC<INavigationProps> = ({ className, categories }
           ))}
         </ul>
       </div>
-      <Button
+      <LinkButton
+        href={ClientRoutes.cart}
         size={"icon"}
         variant={"ghost"}
         className={"ms-auto font-bold gap-1 relative"}
@@ -64,9 +68,9 @@ export const Navigation: React.FC<INavigationProps> = ({ className, categories }
             "flex items-center justify-center absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 bg-black rounded-full size-5 text-xs text-white"
           }
         >
-          0
+          {cart.items.length}
         </span>
-      </Button>
+      </LinkButton>
       <Button
         size={"icon"}
         className={cn("lg:hidden relative z-20", {

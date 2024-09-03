@@ -1,6 +1,5 @@
-import { ShoppingCart } from "lucide-react"
 import React from "react"
-import { Button } from "@/components/ui/buttons/button/button"
+import { ButtonAddToCart } from "@/components/ui/buttons/button-add-to-cart/button-add-to-cart"
 import { Title } from "@/components/ui/topography/title/title"
 import { priceFormatter } from "@/lib/price-formatter"
 import type { IProductDetailsProps } from "./products-details.props"
@@ -36,10 +35,10 @@ export const ProductsDetails: React.FC<IProductDetailsProps> = ({ data }) => {
         </li>
       </ul>
       <div>
-        <Button className={"gap-2"}>
-          <ShoppingCart size={20} />
-          Add to cart
-        </Button>
+        <ButtonAddToCart
+          data={data}
+          className={"gap-2"}
+        />
       </div>
     </div>
   )
