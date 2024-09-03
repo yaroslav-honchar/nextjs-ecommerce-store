@@ -15,7 +15,7 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
   const { name, price, images, category } = product
 
   return (
-    <div className={"group flex flex-col gap-6 bg-white cursor-pointer"}>
+    <div className={"group flex flex-col gap-6 bg-white"}>
       <div className={"aspect-square relative overflow-hidden"}>
         {images.length > 0 ? (
           <>
@@ -29,8 +29,8 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
             <div
               className={cn(
                 "w-full flex gap-4 items-center justify-center p-2 transition-all duration-300",
-                "opacity-0 invisible group-hover:opacity-100 group-hover:visible",
-                "absolute bottom-0 left-0 z-10 bg-black bg-opacity-50",
+                "lg:opacity-0 lg:invisible lg:pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto",
+                "absolute bottom-0 left-0 z-10",
               )}
             >
               <Button size={"icon"}>
