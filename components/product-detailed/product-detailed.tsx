@@ -8,7 +8,7 @@ import type { IProductDetailedProps } from "./product-detailed.props"
 export const ProductDetailed: React.FC<IProductDetailedProps> = ({ data }) => {
   return (
     <Section>
-      <Container className={"grid grid-cols-2"}>
+      <Container className={"grid grid-cols-1 lg:grid-cols-2 gap-8"}>
         <Slider
           images={data.images}
           productName={data.name}
