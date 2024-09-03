@@ -1,7 +1,7 @@
 "use client"
 
 import cn from "classnames"
-import { CloseIcon } from "next/dist/client/components/react-dev-overlay/internal/icons/CloseIcon"
+import { X } from "lucide-react"
 import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/buttons/button/button"
 import { CheckboxButton } from "@/components/ui/form/checkbox-button/checkbox-button"
@@ -88,7 +88,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
           className={"lg:hidden absolute top-4 right-2"}
           onClick={() => toggleFiltersOpen(false)}
         >
-          <CloseIcon />
+          <X className={"w-4 h-4"} />
         </Button>
         <div>
           <Title

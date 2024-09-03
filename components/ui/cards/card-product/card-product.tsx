@@ -7,12 +7,18 @@ import { Button } from "@/components/ui/buttons/button/button"
 import { LinkRoot } from "@/components/ui/links/link-root/link-root"
 import { Title } from "@/components/ui/topography/title/title"
 import { ClientRoutes } from "@/routes/client.routes"
+import { usePreviewModal } from "@/hooks/use-preview-modal.hook"
 import { priceFormatter } from "@/lib/price-formatter"
 import Image from "next/image"
 import type { ICardProductProps } from "./card-product.props"
 
 export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
+  const previewModal = usePreviewModal()
   const { name, price, images, category } = product
+
+  const onPreviewClick = () => {
+    previewModal.onOpen(product)
+  }
 
   return (
     <div className={"group flex flex-col gap-6 bg-white"}>
@@ -33,7 +39,10 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
                 "absolute bottom-0 left-0 z-10",
               )}
             >
-              <Button size={"icon"}>
+              <Button
+                size={"icon"}
+                onClick={onPreviewClick}
+              >
                 <ExpandIcon size={20} />
               </Button>
               <Button size={"icon"}>
@@ -52,7 +61,7 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
         <LinkRoot href={ClientRoutes.product(product.id)}>
           <Title
             tag={"span"}
-            size={"sm"}
+            size={"xs"}
             className={"hover:text-cyan-600 transition-colors duration-300"}
           >
             {name}

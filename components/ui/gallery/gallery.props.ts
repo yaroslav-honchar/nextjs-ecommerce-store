@@ -1,6 +1,6 @@
 import type { IImage } from "@/types/image.interface"
 
-export interface ISliderProps {
+export interface IGalleryProps {
   images: IImage[]
   productName: string
 }

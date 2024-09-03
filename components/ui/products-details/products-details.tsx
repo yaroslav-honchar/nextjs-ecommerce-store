@@ -3,9 +3,9 @@ import React from "react"
 import { Button } from "@/components/ui/buttons/button/button"
 import { Title } from "@/components/ui/topography/title/title"
 import { priceFormatter } from "@/lib/price-formatter"
-import type { IDetailsProps } from "./details.props"
+import type { IProductDetailsProps } from "./products-details.props"
 
-export const Details: React.FC<IDetailsProps> = ({ data }) => {
+export const ProductsDetails: React.FC<IProductDetailsProps> = ({ data }) => {
   return (
     <div className={"flex flex-col gap-6"}>
       <div className={"flex flex-col gap-2"}>

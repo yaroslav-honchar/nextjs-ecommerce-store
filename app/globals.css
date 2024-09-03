@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --header-height: 77px;
+    --scrollbar-offset: 0px;
+}
+
 html,
 body,
 :root {
   height: 100%;
 }
 
-:root {
-  --header-height: 77px;
-  --scrollbar-offset: 0px;
+body {
+ padding-right: var(--scrollbar-offset);
 }
+
+

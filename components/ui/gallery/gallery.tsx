@@ -2,11 +2,11 @@
 
 import { TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react"
 import React from "react"
-import { SliderTab } from "./components/slider-tab"
+import { GalleryTab } from "./components/gallery-tab"
 import Image from "next/image"
-import type { ISliderProps } from "./slider.props"
+import type { IGalleryProps } from "./gallery.props"
 
-export const Slider: React.FC<ISliderProps> = ({ images, productName }) => {
+export const Gallery: React.FC<IGalleryProps> = ({ images, productName }) => {
   return (
     <TabGroup
       as={"div"}
@@ -18,7 +18,7 @@ export const Slider: React.FC<ISliderProps> = ({ images, productName }) => {
           className={"grid grid-cols-4 gap-6"}
         >
           {images.map((image) => (
-            <SliderTab
+            <GalleryTab
               key={image.id}
               image={image}
               alt={productName}

@@ -1,6 +1,6 @@
 import type { IImage } from "@/types/image.interface"
 
-export interface ISliderTabProps {
+export interface IGalleryTabProps {
   image: IImage
   alt: string
 }

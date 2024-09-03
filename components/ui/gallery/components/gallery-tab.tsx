@@ -2,9 +2,9 @@ import cn from "classnames"
 import { Tab } from "@headlessui/react"
 import React from "react"
 import Image from "next/image"
-import type { ISliderTabProps } from "./slider-tab.props"
+import type { IGalleryTabProps } from "./gallery-tab.props"
 
-export const SliderTab: React.FC<ISliderTabProps> = ({ image, alt }) => {
+export const GalleryTab: React.FC<IGalleryTabProps> = ({ image, alt }) => {
   return (
     <Tab className={"relative flex aspect-square cursor-pointer items-center justify-center bg-white"}>
       {({ selected }) => (
