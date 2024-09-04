@@ -7,6 +7,8 @@ import { Header } from "@/components/header/header"
 import { Urbanist } from "next/font/google"
 import "./globals.css"
 
+export const revalidate = 0
+
 const font = Urbanist({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
