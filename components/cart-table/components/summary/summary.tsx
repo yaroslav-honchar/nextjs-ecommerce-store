@@ -8,9 +8,8 @@ import { sendCheckout } from "@/services/checkout.service"
 import { useCart } from "@/hooks/use-cart.hook"
 import { priceFormatter } from "@/lib/price-formatter"
 import { useSearchParams } from "next/navigation"
-import type { ISummaryProps } from "./summary.props"
 
-export const Summary: React.FC<ISummaryProps> = () => {
+export const Summary: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const searchParams = useSearchParams()
   const items = useCart((state) => state.items)
