@@ -24,7 +24,7 @@ export const Summary: React.FC = () => {
     setIsLoading(true)
 
     try {
-      const { url } = await sendCheckout(items.map((item) => item.id))
+      const { url } = await sendCheckout({ productIds: items.map((item) => item.id) })
 
       window.location = url
     } catch (error: unknown) {
