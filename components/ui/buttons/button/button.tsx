@@ -3,7 +3,7 @@ import React, { forwardRef } from "react"
 import type { IButtonProps } from "./button.props"
 
 export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
-  ({ children, className, type, size = "md", variant = "primary", ...rest }, ref) => {
+  ({ children, className, disabled, type, size = "md", variant = "primary", ...rest }, ref) => {
     return (
       <button
         ref={ref}
@@ -19,9 +19,11 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
             "bg-black text-white": variant === "primary",
             "bg-gray-700 text-white": variant === "secondary",
             "bg-transparent text-primary-600 hover:text-white": variant === "ghost",
+            "cursor-not-allowed opacity-50": disabled,
           },
         )}
         type={type ?? "button"}
+        disabled={disabled}
         {...rest}
       >
         {children}

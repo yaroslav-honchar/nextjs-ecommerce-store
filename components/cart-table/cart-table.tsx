@@ -5,11 +5,17 @@ import { Title } from "@/components/ui/topography/title/title"
 import { Container } from "@/components/ui/wrappers/container/container"
 import { Section } from "@/components/ui/wrappers/section/section"
 import { useCart } from "@/hooks/use-cart.hook"
+import { useMounted } from "@/hooks/use-mounted.hook"
 import { CartItem } from "./components/cart-item/cart-item"
 import { Summary } from "./components/summary/summary"
 
 export const CartTable: React.FC = () => {
+  const isMounted = useMounted()
   const { items, removeItem } = useCart()
+
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <Section>

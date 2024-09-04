@@ -17,7 +17,7 @@ export const Summary: React.FC = () => {
   const totalPrice = items.reduce((acc, item) => acc + +item.price, 0)
 
   const onCheckout = async () => {
-    if (isLoading) {
+    if (isLoading || items.length === 0) {
       return
     }
 
@@ -65,6 +65,7 @@ export const Summary: React.FC = () => {
       </div>
 
       <Button
+        disabled={items.length === 0}
         className={"w-full"}
         onClick={onCheckout}
       >
