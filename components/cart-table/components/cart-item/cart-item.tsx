@@ -25,6 +25,7 @@ export const CartItem: React.FC<ICartItemProps> = ({ data, onRemove }) => {
           size={"icon"}
           className={"absolute z-10 right-0 top-0"}
           onClick={() => onRemove(id)}
+          aria-label={`Remove ${name} item from cart`}
         >
           <X className={"size-5"} />
         </Button>

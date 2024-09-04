@@ -78,7 +78,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
           "flex flex-col gap-4 w-full",
           "max-lg:h-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:z-50 max-lg:bg-white max-lg:max-w-[16rem] max-lg:px-5 max-lg:py-10 max-lg:transition-all max-lg:duration-500",
           {
-            "max-lg:opacity-0 max-lg:invisible max-lg:translate-x-[-100%] pointer-events-none": !isOpen,
+            "max-lg:opacity-0 max-lg:invisible max-lg:translate-x-[-100%] max-lg:pointer-events-none": !isOpen,
           },
         )}
       >
@@ -94,7 +94,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
           <Title
             className={"mb-4"}
             size={"sm"}
-            tag={"h3"}
+            tag={"span"}
           >
             Sizes
           </Title>
@@ -118,7 +118,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
           <Title
             className={"mb-4"}
             size={"sm"}
-            tag={"h3"}
+            tag={"span"}
           >
             Colors
           </Title>
