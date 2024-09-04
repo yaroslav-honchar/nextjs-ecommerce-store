@@ -7,10 +7,10 @@ import { useCart } from "@/hooks/use-cart.hook"
 import type { IButtonAddToCartProps } from "./button-add-to-cart.props"
 
 export const ButtonAddToCart: React.FC<IButtonAddToCartProps> = ({ data, iconOnly = false, size, ...rest }) => {
-  const cart = useCart()
+  const addItem = useCart((state) => state.addItem)
 
   const onClick = () => {
-    cart.addItem(data)
+    addItem(data)
   }
 
   return (

@@ -1,9 +1,10 @@
 "use client"
 
 import cn from "classnames"
-import { ExpandIcon, HeartIcon } from "lucide-react"
+import { ExpandIcon } from "lucide-react"
 import React from "react"
 import { ButtonAddToCart } from "@/components/ui/buttons/button-add-to-cart/button-add-to-cart"
+import { ButtonAddToWishlist } from "@/components/ui/buttons/button-add-to-wishlist/button-add-to-wishlist"
 import { Button } from "@/components/ui/buttons/button/button"
 import { LinkRoot } from "@/components/ui/links/link-root/link-root"
 import { Title } from "@/components/ui/topography/title/title"
@@ -46,9 +47,11 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
               >
                 <ExpandIcon size={20} />
               </Button>
-              <Button size={"icon"}>
-                <HeartIcon size={20} />
-              </Button>
+              <ButtonAddToWishlist
+                data={product}
+                className={"gap-2"}
+                iconOnly={true}
+              />
               <ButtonAddToCart
                 data={product}
                 className={"gap-2"}
