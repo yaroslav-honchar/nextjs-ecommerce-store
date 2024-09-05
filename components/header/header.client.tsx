@@ -65,9 +65,9 @@ export const HeaderClient: React.FC<PropsWithChildren> = ({ children }) => {
     <header
       ref={headerRef}
       className={cn(
-        "border-b w-full py-5 fixed top-0 left-0 z-50 bg-white transition-opacity transition-transform duration-500 pe-[var(--scrollbar-offset)]",
+        "border-b w-full py-5 fixed top-0 left-0 z-50 bg-white transition-transform duration-500 pe-[var(--scrollbar-offset)]",
         {
-          "translate-y-[-100%] opacity-0": !isHeaderVisible,
+          "opacity-0": !isHeaderVisible,
         },
       )}
     >
