@@ -1,5 +1,6 @@
 import React from "react"
 import { ButtonAddToCart } from "@/components/ui/buttons/button-add-to-cart/button-add-to-cart"
+import { ButtonAddToWishlist } from "@/components/ui/buttons/button-add-to-wishlist/button-add-to-wishlist"
 import { Title } from "@/components/ui/topography/title/title"
 import { priceFormatter } from "@/lib/price-formatter"
 import type { IProductDetailsProps } from "./products-details.props"
@@ -34,8 +35,12 @@ export const ProductsDetails: React.FC<IProductDetailsProps> = ({ data }) => {
           </p>
         </li>
       </ul>
-      <div>
+      <div className={"flex gap-5 flex-wrap items-center"}>
         <ButtonAddToCart
+          data={data}
+          className={"gap-2"}
+        />
+        <ButtonAddToWishlist
           data={data}
           className={"gap-2"}
         />
