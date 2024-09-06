@@ -4,7 +4,7 @@ import type { ITitleProps } from "./title.props"
 
 export const Title: React.FC<ITitleProps> = ({ className, size = "md", tag = "h2", ...rest }) => {
   const props = {
-    className: cn("font-medium text-black", className, {
+    className: cn("block font-medium text-black", className, {
       "text-lg": size === "xs",
       "text-2xl": size === "sm",
       "text-4xl": size === "md",

@@ -63,7 +63,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
         Filters
       </Button>
       <div
-        className={cn("lg:hidden fixed inset-0 z-10 bg-black bg-opacity-50 transition-all duration-500", {
+        className={cn("lg:hidden fixed inset-0 z-[60] bg-black bg-opacity-50 transition-all duration-500", {
           "opacity-0 invisible pointer-events-none": !isOpen,
         })}
         onClick={(event) => {
@@ -76,7 +76,7 @@ export const Filters: React.FC<IFiltersProps> = ({ sizes, colors }) => {
       <div
         className={cn(
           "flex flex-col gap-4 w-full",
-          "max-lg:h-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:z-50 max-lg:bg-white max-lg:max-w-[16rem] max-lg:px-5 max-lg:py-10 max-lg:transition-all max-lg:duration-500",
+          "max-lg:h-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:z-[70] max-lg:bg-white max-lg:max-w-[16rem] max-lg:px-5 max-lg:py-10 max-lg:transition-all max-lg:duration-500",
           {
             "max-lg:opacity-0 max-lg:invisible max-lg:translate-x-[-100%] max-lg:pointer-events-none": !isOpen,
           },
