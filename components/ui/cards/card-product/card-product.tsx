@@ -64,7 +64,7 @@ export const CardProduct: React.FC<ICardProductProps> = ({ product }) => {
         )}
       </div>
       <div className={"flex flex-col gap-2"}>
-        <LinkRoot href={ClientRoutes.product(product.id)}>
+        <LinkRoot href={ClientRoutes.product(product.slug)}>
           <Title
             tag={"span"}
             size={"xs"}

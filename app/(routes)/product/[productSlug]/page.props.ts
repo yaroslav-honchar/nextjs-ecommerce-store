@@ -1,5 +1,5 @@
 export interface IPageProps {
   params: {
-    productId: string
+    productSlug: string
   }
 }

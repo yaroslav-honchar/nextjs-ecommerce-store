@@ -4,9 +4,12 @@ import { getCategory } from "@/services/categories.service"
 import { getColors } from "@/services/colors.service"
 import { getProducts } from "@/services/products.service"
 import { getSizes } from "@/services/sizes.service"
+import { getIdFromSlug } from "@/lib/get-id-from-slug"
 import type { IPageProps } from "./page.props"
 
-const CatalogPage: React.FC<IPageProps> = async ({ params: { catalogId }, searchParams: { color, size } }) => {
+const CatalogPage: React.FC<IPageProps> = async ({ params: { catalogSlug }, searchParams: { color, size } }) => {
+  const catalogId = getIdFromSlug(catalogSlug)
+
   const products = await getProducts({
     params: {
       categoryId: catalogId,

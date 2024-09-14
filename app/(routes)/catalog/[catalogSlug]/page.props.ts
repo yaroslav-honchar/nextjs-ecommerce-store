@@ -1,6 +1,6 @@
 export interface IPageProps {
   params: {
-    catalogId: string
+    catalogSlug: string
   }
   searchParams: {
     color: string

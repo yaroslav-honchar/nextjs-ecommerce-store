@@ -6,6 +6,7 @@ import type { ISize } from "@/types/size.interface"
 export interface IProduct {
   id: string
   name: string
+  slug: string
   price: number
   isFeatured: boolean
   images: IImage[]
